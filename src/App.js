@@ -15,6 +15,10 @@ class App extends Component {
     this.setState({value});
   };
 
+  onKeyPress = ({charCode}) => {
+    console.log(String.fromCharCode(charCode));
+  }
+
   render() {
     return (
       <div className="App">
@@ -22,7 +26,11 @@ class App extends Component {
           placeholder='Start typing'
           value={this.state.value}
           onChange={this.onInputChange}
+          onKeyPress={this.onKeyPress}
           />
+        <div>
+          <p>Last key pressed was: {this.state.lastKeyPress}</p>
+        </div>
       </div>
     );
   }

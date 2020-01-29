@@ -10,6 +10,10 @@ class App extends Component {
     };
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   onInputChange = ({target}) => {
     const { value } = target;
     this.setState({value});

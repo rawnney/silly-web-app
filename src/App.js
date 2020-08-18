@@ -7,11 +7,12 @@ class App extends Component {
 
     this.state = {
       value: '',
+      lastKeyPress: undefined,
     };
   }
 
   shouldComponentUpdate() {
-    return false;
+    return true;
   }
 
   onInputChange = ({target}) => {
@@ -20,7 +21,7 @@ class App extends Component {
   };
 
   onKeyPress = ({charCode}) => {
-    console.log(String.fromCharCode(charCode));
+    this.setState({lastKeyPress: String.fromCharCode(charCode)});
   }
 
   render() {

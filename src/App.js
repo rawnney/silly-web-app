@@ -2,18 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  constructor(...args) {
-    super(...args);
-
-    this.state = {
-      value: '',
-      lastKeyPress: undefined,
-    };
-  }
-
-  shouldComponentUpdate() {
-    return true;
-  }
+  state = {
+    value: '',
+    lastKeyPress: undefined,
+  };
 
   onInputChange = ({target}) => {
     const { value } = target;
